@@ -1,5 +1,1 @@
-release: python manage.py makemigrations --no-input
-release: python manage.py migrate --no-input
-
-
-web: gunicorn eventback.wsgi
+pip install dj-database-url gunicorn whitenoise
