@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'rest_framework',
-    'EventPlatform',
+    'eventplatform',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
