@@ -1,1 +1,1 @@
-pip install dj-database-url gunicorn whitenoise
+web: gunicorn eventplatform.wsgi --log-file-
