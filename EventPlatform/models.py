@@ -1,5 +1,14 @@
 from django.db import models
 
+
+
+class User(models.Model):
+    name = models.CharField(max_length=50)
+    surname = models.CharField(max_length=50)
+    email = models.EmailField(max_length=255, unique=True, db_index=True)
+    password = models.
+
+
 class Event(models.Model):
     title = models.CharField(max_length=150)
     date = models.DateField(blank=True)
