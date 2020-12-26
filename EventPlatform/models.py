@@ -7,7 +7,7 @@ class Event(models.Model):
     date = models.DateField(blank=True)
     author = models.CharField(max_length=150)
     description = models.TextField()
-    picture = models.FileField(upload_to='images', blank=True)
+    picture = models.ImageField(upload_to='images', blank=True)
     location = models.CharField(max_length=150)
 
 
