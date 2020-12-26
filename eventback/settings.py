@@ -79,9 +79,9 @@ WSGI_APPLICATION = 'eventback.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'djangogirls',
-        'USER': 'name',
-        'PASSWORD': '',
+        'NAME': 'event-platform',
+        'USER': 'postgres',
+        'PASSWORD': '1999',
         'HOST': 'localhost',
         'PORT': '',
     }
