@@ -6,6 +6,7 @@ class Event(models.Model):
     author = models.CharField(max_length=150)
     description = models.TextField()
     picture = models.ImageField(upload_to='images')
+    location = models.CharField(max_length=150)
 
 
     def __str__(self):
