@@ -26,7 +26,7 @@ SECRET_KEY = '2jg#u^gkzqo#o3ys^txz23toao#xbyhc*9t0xrd1c4llznr$z5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['event-p.herokuapp.com']
+ALLOWED_HOSTS = ['event-p.herokuapp.com','*']
 
 
 
