@@ -27,7 +27,7 @@ SECRET_KEY = '2jg#u^gkzqo#o3ys^txz23toao#xbyhc*9t0xrd1c4llznr$z5'
 DEBUG = True
 
 ALLOWED_HOSTS = ['event-p.herokuapp.com','*']
-
+ 
 
 
 # Application definition
