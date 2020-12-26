@@ -1,1 +1,0 @@
-web: gunicorn eventback/eventback/wsgi:app
