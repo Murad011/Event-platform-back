@@ -6,3 +6,7 @@ class Event(models.Model):
     author = models.CharField(max_length=150)
     description = models.TextField()
     picture = models.ImageField(upload_to='images')
+
+
+    def __str__(self):
+        return self.title
