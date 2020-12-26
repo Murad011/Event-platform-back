@@ -1,1 +1,1 @@
-web: gunicorn EventPlatform.wsgi:app
+web: gunicorn eventback.wsgi --log-file -
