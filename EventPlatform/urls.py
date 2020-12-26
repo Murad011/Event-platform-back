@@ -3,5 +3,6 @@ from .views import (EventAPIView,event_detail)
 
 urlpatterns = [
     path('eventapi/', EventAPIView.as_view()),
-    path('eventdetail/<int:id>',event_detail)
+    path('eventdetail/<int:id>',event_detail),
+    path('apis/', include('account.urls'))
 ]
