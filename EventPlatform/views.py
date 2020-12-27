@@ -17,6 +17,7 @@ from rest_framework import viewsets
 class EventAPIView(generics.GenericAPIView,mixins.ListModelMixin,mixins.CreateModelMixin,mixins.UpdateModelMixin,mixins.RetrieveModelMixin,mixins.DestroyModelMixin):
     serializer_class = EventSerializer
     queryset = Event.objects.all()
+    
 
     def get(self, request):
         return self.list(request)
@@ -44,6 +45,7 @@ def event_detail(request,id):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    lookup_field = 'id'
 
 
 
