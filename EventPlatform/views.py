@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework import generics
-from django.contrib.auth.models import User
 from rest_framework import mixins
 from .models import Event
 from rest_framework import generics, permissions
@@ -9,8 +8,9 @@ from rest_framework.response import Response
 from rest_framework import status
 from .serializers import  EventSerializer
 from django.http import HttpResponse, JsonResponse
-from .serializers import  LoginSerializer, LogoutSerializer
-
+from .serializers import UserSerializer
+from django.contrib.auth.models import User
+from rest_framework import viewsets
 
 
 class EventAPIView(generics.GenericAPIView,mixins.ListModelMixin,mixins.CreateModelMixin,mixins.UpdateModelMixin,mixins.RetrieveModelMixin,mixins.DestroyModelMixin):
@@ -38,25 +38,8 @@ def event_detail(request,id):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-class LoginAPIView(generics.GenericAPIView):
-    serializer_class = LoginSerializer
-
-    def post(self, request):
-        serializer = self.serializer_class(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-
-class LogoutAPIView(generics.GenericAPIView):
-    serializer_class = LogoutSerializer
-    permission_classes = (permissions.IsAuthenticated,)
-
-    def post(self, request):
-
-        serializer = self.serializer_class(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-
-        return Response(status=status.HTTP_204_NO_CONTENT)
-
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer

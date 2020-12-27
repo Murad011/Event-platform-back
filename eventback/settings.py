@@ -34,8 +34,6 @@ ALLOWED_HOSTS = ['event-p.herokuapp.com','*']
 
 INSTALLED_APPS = [
     'corsheaders',
-    'rest_framework_simplejwt.token_blacklist',
-    'rest_framework.authtoken',
     'EventPlatform',
     'rest_framework',
     'django.contrib.admin',
@@ -47,18 +45,8 @@ INSTALLED_APPS = [
     
 ]
 
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-        
-    ],
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.AllowAny',
-        'rest_framework.permissions.IsAuthenticated',
-        'rest_framework.permissions.IsAdminUser'
-    )
-}
-AUTH_USER_MODEL = 'EventPlatform.User'
+
+
 
 
 MIDDLEWARE = [
@@ -74,10 +62,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=2),
-}
 
 
 
