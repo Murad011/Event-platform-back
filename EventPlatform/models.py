@@ -10,6 +10,8 @@ class Event(models.Model):
     picture = models.ImageField(upload_to='images', blank=True)
     location = models.CharField(max_length=150)
 
+    def __str__(self):
+        return self.title
 
 
 class User(models.Model):
@@ -18,5 +20,4 @@ class User(models.Model):
     email = models.EmailField(max_length=255, unique=True, db_index=True)
 
 
-    def __str__(self):
-        return self.title
+   

@@ -34,7 +34,6 @@ ALLOWED_HOSTS = ['event-p.herokuapp.com','*']
 
 INSTALLED_APPS = [
     'corsheaders',
-    'storages',
     'EventPlatform',
     'rest_framework',
     'django.contrib.admin',
@@ -43,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
 ]
 
 
