@@ -100,7 +100,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'eventback.wsgi.application'
-
+AUTH_USER_MODEL = 'EventPlatform.User'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
