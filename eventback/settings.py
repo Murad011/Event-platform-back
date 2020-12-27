@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['event-p.herokuapp.com','*']
 
 INSTALLED_APPS = [
     'corsheaders',
+    'storages',
     'EventPlatform',
     'rest_framework',
     'django.contrib.admin',
@@ -145,3 +146,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
+
+AWS_ACCESS_KEY_ID = 'AKIAR2EZGZUDREYMPVHJ'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'event-platform-murad'
+AWS_S3_FILE_EVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
