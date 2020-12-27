@@ -60,6 +60,7 @@ REST_FRAMEWORK = {
     )
 }
 
+AUTH_USER_MODEL = 'EventPlatform.User'
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -100,7 +101,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'eventback.wsgi.application'
-AUTH_USER_MODEL = 'EventPlatform.User'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
