@@ -13,6 +13,7 @@ from django.contrib.auth.models import User
 from rest_framework import viewsets
 
 
+
 class EventAPIView(generics.GenericAPIView,mixins.ListModelMixin,mixins.CreateModelMixin,mixins.UpdateModelMixin,mixins.RetrieveModelMixin,mixins.DestroyModelMixin):
     serializer_class = EventSerializer
     queryset = Event.objects.all()
@@ -43,3 +44,17 @@ def event_detail(request,id):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+
+
+@api_view(['GET','DELETE'])
+def user_detail(request,id):
+    user = User.objects.get(id=id)
+    
+    if request.method == 'GET':
+        serializer = UserSerializer(event)
+        return Response(serializer.data) 
+
+    elif request.method == 'DELETE':
+        user.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
