@@ -14,7 +14,7 @@ class Event(models.Model):
     description = models.TextField()
     picture = models.ImageField(upload_to='https://event-p.herokuapp.com/media/images', blank=True)
     location = models.CharField(max_length=150)
-    user = models.ForeignKey(User)
+  
 
     def __str__(self):
         return self.title
